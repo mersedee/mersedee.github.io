@@ -1,0 +1,22 @@
+{
+  "name": "personal-web",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html --no-content-hash --no-source-maps --dist-dir www && node postbuild.js"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.0.0-beta.3.1",
+    "parcel": "^2.0.0-beta.3.1"
+  },
+  "dependencies": {
+    "bootstrap-css-only": "^4.4.1",
+    "jquery": "^3.6.0",
+    "lodash.escaperegexp": "^4.1.2",
+    "parallax-js": "^3.1.0",
+    "replace-in-file": "^6.2.0",
+    "velocity-animate": "^1.5.2",
+    "velocityjs": "^2.0.3"
+  }
+}
