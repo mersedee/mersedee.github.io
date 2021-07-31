@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --no-content-hash --no-source-maps --dist-dir www && node postbuild.js"
+    "build": "parcel build src/index.html --no-content-hash --no-source-maps --dist-dir deploy && node postbuild.js",
+    "deploy": "gh-pages -d deploy"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.0.0-beta.3.1",
@@ -12,6 +13,7 @@
   },
   "dependencies": {
     "bootstrap-css-only": "^4.4.1",
+    "gh-pages": "^3.2.3",
     "jquery": "^3.6.0",
     "lodash.escaperegexp": "^4.1.2",
     "parallax-js": "^3.1.0",

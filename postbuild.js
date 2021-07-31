@@ -4,7 +4,7 @@ const replace = require('replace-in-file');
 const escapeRegExp = require('lodash.escaperegexp');
 
 // the directory in which you're outputting your build
-let baseDir = 'www'
+let baseDir = 'deploy'
 // the name for the directory where your static files will be moved to
 let staticDir = 'assets'
 // the directory where your built files (css and JavaScript) will be moved  to
