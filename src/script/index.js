@@ -44,8 +44,6 @@ const cursor = document.querySelector('.cursor');
 const cursorInner = document.querySelector('.cursor-move-inner');
 const cursorOuter = document.querySelector('.cursor-move-outer');
 
-// const trigger = document.querySelectorAll('a');
-// console.warn(trigger);
 
 let mouseX = 0;
 let mouseY = 0;
@@ -66,15 +64,6 @@ document.addEventListener('mousemove', e => {
     if (!loop) {
         loop = window.requestAnimationFrame(render);
     }
-});
-
-trigger.addEventListener('mouseenter', () => {
-    console.warn('in');
-    cursor.classList.add('cursor--hover');
-});
-
-trigger.addEventListener('mouseleave', () => {
-    cursor.classList.remove('cursor--hover');
 });
 
 function render() {

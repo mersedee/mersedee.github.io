@@ -22,9 +22,9 @@ a {
   text-decoration: none !important;
 }
 
-object {
-  pointer-events: none;
-}
+//object {
+//  pointer-events: none;
+//}
 
 @mixin flex-center {
   display: flex;
@@ -126,7 +126,7 @@ html:hover {
     color: $Primary;
   }
 
-  object {
+  img {
     margin-right: 5px;
   }
 }
@@ -195,7 +195,7 @@ html:hover {
   font-weight: 500;
   white-space: nowrap;
 
-  object {
+  img {
     margin-left: 6px;
     margin-top: 2px;
   }
