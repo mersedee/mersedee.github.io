@@ -3,6 +3,10 @@
 @import "vars";
 @import "loading";
 
+html {
+  position: relative;
+}
+
 html, body {
   min-height: 100%;
 }
@@ -141,7 +145,6 @@ html:hover {
 
 .subtitle {
   font-size: 24px;
-  font-weight: 500;
   color: $Primary-dark;
   margin-top: 72px;
 }
@@ -156,7 +159,6 @@ html:hover {
 
 .description {
   font-size: 28px;
-  font-weight: 500;
   line-height: 1.43;
   color: $Primary;
 }
