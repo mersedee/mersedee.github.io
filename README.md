@@ -9,6 +9,12 @@ Install dependencies:
 npm install
 ```
 
+Compile the code for development:
+
+```
+npm run dev
+```
+
 Create the build:
 
 ```
