@@ -9,6 +9,7 @@ html {
 
 html, body {
   min-height: 100%;
+  //height: 100%;
 }
 
 body {
@@ -22,9 +23,11 @@ a {
   text-decoration: none !important;
 }
 
-//object {
-//  pointer-events: none;
-//}
+
+* {
+  cursor: none;
+}
+
 
 @mixin flex-center {
   display: flex;
@@ -42,77 +45,59 @@ a {
   justify-content: center;
 }
 
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin transition($transition) {
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -ms-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+
 //cursor
-$ease-out-quint: cubic-bezier(0.230, 1.000, 0.320, 1.000);
-$ease-out-quart: cubic-bezier(0.165, 0.840, 0.440, 1.000);
-
-html:hover {
-  .cursor {
-    opacity: 1;
-  }
-}
-
-.cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  width: 25px;
-  height: 25px;
-  margin: -25px 0 0 -25px;
-  opacity: 0;
-  transition: opacity .2s $ease-out-quart;
-  pointer-events: none;
-
-  &--hover {
-    .cursor-inner {
-      transform: scale(.5);
-      opacity: 0;
-      display: none;
-    }
-
-    .cursor-outer {
-      transform: scale(1.4);
-      border-color: $Primary;
-      opacity: 1;
-      display: none;
-    }
-  }
-}
-
-.cursor-move-inner {
+.abs-center {
   position: absolute;
-  background-color: $Primary;
-  border-radius: 2px;
   top: 50%;
   left: 50%;
-  width: 6px;
-  height: 6px;
-  margin-top: -3px;
-  margin-left: -3px;
+  @include transform(translate(-50%, -50%));
 }
 
-.cursor-move-outer {
+.custom-cursor {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  z-index: 900;
+  top: -40px;
+  left: -40px;
+  pointer-events: none;
 }
 
-.cursor-inner {
-  width: 100%;
-  transition: transform .4s $ease-out-quint, opacity .4s $ease-out-quart;
+.cursor-small {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: $Primary;
+  z-index: 5;
 }
 
-.cursor-outer {
-  display: block;
+.cursor-big {
   width: 100%;
   height: 100%;
-  border: 1px solid rgba($Primary, .75);
-  border-radius: 2px;
-  box-sizing: border-box;
-  transition: border .4s $ease-out-quart, transform .4s $ease-out-quint, opacity .4s $ease-out-quart;
+  border-radius: 50%;
+  background-color: $Primary;
+  z-index: 1;
+  opacity: 0.4;
+  margin: -40px 0 0 -40px;
+  @include transform(scale(0));
+  @include transition(all 320ms cubic-bezier(.26,.01,.17,1));
 }
 
 //header
