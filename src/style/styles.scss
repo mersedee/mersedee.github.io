@@ -96,7 +96,7 @@ a {
   opacity: 0.4;
   margin: -40px 0 0 -40px;
   @include transform(scale(0));
-  @include transition(all 320ms cubic-bezier(.26,.01,.17,1));
+  @include transition(all 320ms cubic-bezier(.26, .01, .17, 1));
 }
 
 //header
@@ -130,7 +130,7 @@ a {
 .subtitle {
   font-size: 24px;
   color: $Primary-dark;
-  margin-top: 72px;
+  margin-top: 100px;
 }
 
 .title {
@@ -302,7 +302,7 @@ a {
     transform: scale(0.8);
     height: 600px;
     transform-origin: top left;
-    margin-left: 25px;
+    margin-left: 40px;
   }
 
   .social-list-item {
@@ -321,6 +321,7 @@ a {
   .img-container {
     transform: scale(0.7);
     height: 450px;
+    margin-left: 45px;
   }
 }
 
