@@ -1,5 +1,5 @@
 window.jQuery = window.$ = require("jquery/dist/jquery");
-window.$.velocity = require('velocity-animate/velocity');
+window.$.velocity = require('velocity-animate');
 import Parallax from 'parallax-js/dist/parallax';
 import 'velocity-animate/velocity.ui';
 
