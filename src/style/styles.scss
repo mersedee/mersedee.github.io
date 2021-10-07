@@ -285,6 +285,14 @@ a {
   }
 }
 
+@media (min-width: 1600px) {
+  body {
+    width: 1500px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: $lg) {
   body {
     padding-right: 40px;
