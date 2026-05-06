@@ -13,25 +13,14 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code, .mono {
-  font-family: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace;
-}
+html { scroll-behavior: smooth; }
 
-.font-display {
-  font-family: 'Space Grotesk', 'Inter', sans-serif;
-  letter-spacing: -0.02em;
-}
+code, .mono { font-family: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace; }
+.font-display { font-family: 'Space Grotesk', 'Inter', sans-serif; letter-spacing: -0.02em; }
+.font-mono { font-family: 'JetBrains Mono', monospace; }
 
-.font-mono {
-  font-family: 'JetBrains Mono', monospace;
-}
+::selection { background: rgba(45, 212, 191, 0.25); color: #ffffff; }
 
-::selection {
-  background: rgba(45, 212, 191, 0.25);
-  color: #ffffff;
-}
-
-/* subtle grid background */
 .bg-grid {
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
@@ -50,22 +39,22 @@ code, .mono {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.7'/></svg>");
 }
 
-/* glow accents */
 .accent-glow {
   background: radial-gradient(60% 60% at 50% 50%, rgba(45, 212, 191, 0.18), transparent 70%);
 }
 
 .hover-lift {
-  transition: transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1), border-color 240ms ease, background-color 240ms ease;
+  transition: transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 320ms ease,
+              background-color 320ms ease,
+              box-shadow 320ms ease;
 }
 .hover-lift:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px -18px rgba(45, 212, 191, 0.25);
 }
 
-.link-underline {
-  position: relative;
-  transition: color 200ms ease;
-}
+.link-underline { position: relative; transition: color 220ms ease; }
 .link-underline::after {
   content: '';
   position: absolute;
@@ -74,16 +63,19 @@ code, .mono {
   background: currentColor;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 340ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.link-underline:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
+.link-underline:hover::after { transform: scaleX(1); transform-origin: left; }
 
 .shimmer-divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12) 30%, rgba(45,212,191,0.35) 50%, rgba(255,255,255,0.12) 70%, transparent);
+  background-size: 200% 100%;
+  animation: shimmer-move 6s linear infinite;
+}
+@keyframes shimmer-move {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
 @keyframes blink {
@@ -99,9 +91,85 @@ code, .mono {
 
 @keyframes float-slow {
   0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(0, -8px); }
+  50% { transform: translate(0, -10px); }
 }
 .float-slow { animation: float-slow 8s ease-in-out infinite; }
+
+/* ========== SCROLL REVEAL ANIMATIONS ========== */
+.reveal-up, .reveal-down, .reveal-left, .reveal-right, .reveal-fade, .reveal-scale {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition:
+    opacity 700ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.reveal-up      { transform: translate3d(0, 28px, 0); }
+.reveal-down    { transform: translate3d(0, -28px, 0); }
+.reveal-left    { transform: translate3d(-28px, 0, 0); }
+.reveal-right   { transform: translate3d(28px, 0, 0); }
+.reveal-fade    { transform: none; }
+.reveal-scale   { transform: scale(0.96); }
+
+.reveal-up.in-view,
+.reveal-down.in-view,
+.reveal-left.in-view,
+.reveal-right.in-view,
+.reveal-fade.in-view,
+.reveal-scale.in-view {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: none;
+}
+
+/* ========== HERO ENTRANCE ========== */
+@keyframes rise-in {
+  0%   { opacity: 0; transform: translate3d(0, 24px, 0); filter: blur(6px); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); }
+}
+.hero-rise {
+  opacity: 0;
+  animation: rise-in 900ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes word-mask {
+  0% { clip-path: inset(0 100% 0 0); opacity: 0; }
+  100% { clip-path: inset(0 0 0 0); opacity: 1; }
+}
+.word-mask {
+  display: inline-block;
+  opacity: 0;
+  animation: word-mask 1s cubic-bezier(0.75, 0, 0.25, 1) forwards;
+}
+
+/* Parallax hero orb follows mouse (driven via inline CSS var --mx/--my) */
+.hero-orb {
+  transform: translate3d(calc(var(--mx, 0) * 1px), calc(var(--my, 0) * 1px), 0);
+  transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Subtle button press */
+button, .btn-press { transition: transform 160ms ease, background-color 220ms ease, color 220ms ease, border-color 220ms ease; }
+button:active, .btn-press:active { transform: translateY(1px) scale(0.99); }
+
+/* Skill chips lift */
+.chip {
+  transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              background-color 240ms ease,
+              border-color 240ms ease,
+              color 240ms ease;
+}
+.chip:hover { transform: translateY(-2px); }
+
+/* Reduced motion fallback */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 
 @layer base {
   :root {

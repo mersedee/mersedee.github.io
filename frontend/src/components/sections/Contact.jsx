@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SectionHeader from "./SectionHeader";
+import Reveal from "../Reveal";
 import { profile } from "../../mock";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
@@ -55,8 +56,8 @@ const Contact = () => {
         />
 
         <div className="mt-12 grid lg:grid-cols-12 gap-8">
-          <div className="lg:col-span-5 space-y-6">
-            <div className="rounded-xl border border-white/10 bg-zinc-950/40 p-6">
+          <Reveal variant="left" delay={100} className="lg:col-span-5 space-y-6">
+            <div className="rounded-xl border border-white/10 bg-zinc-950/40 p-6 hover-lift hover:border-teal-300/30">
               <div className="flex items-center gap-3 mb-4">
                 <Mail className="h-4 w-4 text-teal-300" />
                 <span className="font-mono text-xs uppercase tracking-widest text-zinc-400">
@@ -80,7 +81,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="rounded-xl border border-white/10 bg-zinc-950/40 p-6">
+            <div className="rounded-xl border border-white/10 bg-zinc-950/40 p-6 hover-lift hover:border-teal-300/30">
               <div className="font-mono text-xs uppercase tracking-widest text-zinc-400 mb-4">
                 Elsewhere
               </div>
@@ -93,21 +94,22 @@ const Contact = () => {
                       rel="noreferrer"
                       className="group flex items-center justify-between gap-3 py-2 border-b border-white/5 hover:border-teal-300/30 transition-colors"
                     >
-                      <span className="text-zinc-200 group-hover:text-teal-300">{s.label}</span>
-                      <span className="flex items-center gap-2 font-mono text-xs text-zinc-500 group-hover:text-zinc-300">
+                      <span className="text-zinc-200 group-hover:text-teal-300 transition-colors">{s.label}</span>
+                      <span className="flex items-center gap-2 font-mono text-xs text-zinc-500 group-hover:text-zinc-300 transition-colors">
                         {s.handle}
-                        <ArrowUpRight className="h-3.5 w-3.5" />
+                        <ArrowUpRight className="h-3.5 w-3.5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
                       </span>
                     </a>
                   </li>
                 ))}
               </ul>
             </div>
-          </div>
+          </Reveal>
 
+          <Reveal variant="right" delay={180} className="lg:col-span-7">
           <form
             onSubmit={onSubmit}
-            className="lg:col-span-7 rounded-xl border border-white/10 bg-zinc-950/40 p-6 md:p-8 space-y-5"
+            className="rounded-xl border border-white/10 bg-zinc-950/40 p-6 md:p-8 space-y-5"
           >
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
@@ -169,6 +171,7 @@ const Contact = () => {
               </Button>
             </div>
           </form>
+          </Reveal>
         </div>
       </div>
     </section>
