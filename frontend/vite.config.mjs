@@ -337,6 +337,7 @@ export default defineConfig(({ command, mode }) => {
       enableHealthCheck && viteHealthPlugin(),
       visualEditsDevPlugin(enableVisualEdits),
     ].filter(Boolean),
+    base: '/',
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "src"),
