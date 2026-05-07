@@ -1,8 +1,9 @@
-import React from "react";
+import { Code2, Layers, Palette, GitBranch } from "lucide-react";
+
+import { skills } from "@/mock";
+
 import SectionHeader from "./SectionHeader";
 import Reveal from "../Reveal";
-import { skills } from "../../mock";
-import { Code2, Layers, Palette, GitBranch } from "lucide-react";
 
 const groupIcons = {
   Languages: Code2,

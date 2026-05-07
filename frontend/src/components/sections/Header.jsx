@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { Button } from "../ui/button";
-import { navItems, profile } from "../../mock";
+import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+import { navItems, profile } from "@/mock";
 
 const Header = ({ activeId }) => {
   const [scrolled, setScrolled] = useState(false);

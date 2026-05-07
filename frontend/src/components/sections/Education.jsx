@@ -1,8 +1,9 @@
-import React from "react";
+import { GraduationCap, Languages } from "lucide-react";
+
+import { education, languages } from "@/mock";
+
 import SectionHeader from "./SectionHeader";
 import Reveal from "../Reveal";
-import { education, languages } from "../../mock";
-import { GraduationCap, Languages } from "lucide-react";
 
 const Education = () => {
   return (

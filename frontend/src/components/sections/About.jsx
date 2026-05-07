@@ -1,7 +1,7 @@
-import React from "react";
+import { about } from "@/mock";
+
 import SectionHeader from "./SectionHeader";
 import Reveal from "../Reveal";
-import { about } from "../../mock";
 
 const About = () => {
   return (

@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
-import Header from "./sections/Header";
-import Hero from "./sections/Hero";
-import About from "./sections/About";
-import Experience from "./sections/Experience";
-import Skills from "./sections/Skills";
-import Projects from "./sections/Projects";
-import Education from "./sections/Education";
-import Contact from "./sections/Contact";
-import Footer from "./sections/Footer";
+import { useEffect, useState } from "react";
+
+import Header from "@/components/sections/Header";
+import Hero from "@/components/sections/Hero";
+import About from "@/components/sections/About";
+import Experience from "@/components/sections/Experience";
+import Skills from "@/components/sections/Skills";
+import Projects from "@/components/sections/Projects";
+import Education from "@/components/sections/Education";
+import Contact from "@/components/sections/Contact";
+import Footer from "@/components/sections/Footer";
 
 const Portfolio = () => {
   const [activeId, setActiveId] = useState("about");

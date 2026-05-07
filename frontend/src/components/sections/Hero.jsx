@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from "react";
-import { Button } from "../ui/button";
-import { profile } from "../../mock";
+import { useEffect, useRef } from "react";
 import { ArrowDown, ArrowUpRight, MapPin } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+import { profile } from "@/mock";
 
 const Hero = () => {
   const orbRef = useRef(null);

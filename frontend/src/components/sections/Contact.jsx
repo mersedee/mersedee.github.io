@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { toast } from "sonner";
+import { Mail, ArrowUpRight, Copy, Check } from "lucide-react";
+
+import { profile } from "@/mock";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+
 import SectionHeader from "./SectionHeader";
 import Reveal from "../Reveal";
-import { profile } from "../../mock";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
-import { Textarea } from "../ui/textarea";
-import { Label } from "../ui/label";
-import { Mail, ArrowUpRight, Copy, Check } from "lucide-react";
-import { toast } from "sonner";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });

@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
+
+import { experiences } from "@/mock";
+import { Badge } from "@/components/ui/badge";
+
 import SectionHeader from "./SectionHeader";
 import Reveal from "../Reveal";
-import { experiences } from "../../mock";
-import { Badge } from "../ui/badge";
 
 const Experience = () => {
   const [active, setActive] = useState(0);

@@ -1,5 +1,4 @@
-import React from "react";
-import { profile } from "../../mock";
+import { profile } from "@/mock";
 
 const Footer = () => {
   const year = new Date().getFullYear();

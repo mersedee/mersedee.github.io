@@ -1,8 +1,9 @@
-import React from "react";
+import { ArrowUpRight } from "lucide-react";
+
+import { projects } from "@/mock";
+
 import SectionHeader from "./SectionHeader";
 import Reveal from "../Reveal";
-import { projects } from "../../mock";
-import { ArrowUpRight } from "lucide-react";
 
 const Projects = () => {
   return (
