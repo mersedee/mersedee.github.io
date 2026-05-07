@@ -55,8 +55,8 @@ const Contact = () => {
           description="Have a role, a project, or just want to chat about React, Web3, or performance? My inbox is open."
         />
 
-        <div className="mt-12 grid lg:grid-cols-12 gap-8">
-          <Reveal variant="left" delay={100} className="lg:col-span-5 space-y-6">
+        <div className="mt-12 grid lg:grid-cols-12 gap-8 items-stretch">
+          <Reveal variant="left" delay={100} className="lg:col-span-5 flex flex-col gap-6 lg:h-full">
             <div className="rounded-xl border border-white/10 bg-zinc-950/40 p-6 hover-lift hover:border-teal-300/30">
               <div className="flex items-center gap-3 mb-4">
                 <Mail className="h-4 w-4 text-teal-300" />
@@ -81,7 +81,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="rounded-xl border border-white/10 bg-zinc-950/40 p-6 hover-lift hover:border-teal-300/30">
+            <div className="rounded-xl border border-white/10 bg-zinc-950/40 p-6 hover-lift hover:border-teal-300/30 lg:flex-1">
               <div className="font-mono text-xs uppercase tracking-widest text-zinc-400 mb-4">
                 Elsewhere
               </div>
@@ -106,10 +106,10 @@ const Contact = () => {
             </div>
           </Reveal>
 
-          <Reveal variant="right" delay={180} className="lg:col-span-7">
+          <Reveal variant="right" delay={180} className="lg:col-span-7 lg:h-full">
           <form
             onSubmit={onSubmit}
-            className="rounded-xl border border-white/10 bg-zinc-950/40 p-6 md:p-8 space-y-5"
+            className="h-full rounded-xl border border-white/10 bg-zinc-950/40 p-6 md:p-8 space-y-5"
           >
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
@@ -148,7 +148,7 @@ const Contact = () => {
               <Textarea
                 id="message"
                 name="message"
-                rows={6}
+                rows={5}
                 value={form.message}
                 onChange={onChange}
                 placeholder="Tell me about your project, role, or idea…"
