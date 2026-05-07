@@ -29,8 +29,19 @@ const Projects = () => {
                       {p.org}
                     </span>
                   </div>
-                  <ArrowUpRight className="h-5 w-5 text-zinc-500 group-hover:text-teal-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" />
-                </div>
+                    <a
+                        href={p?.link || undefined}
+                        target={p?.link ? "_blank" : undefined}
+                        rel="noopener noreferrer"
+                        aria-disabled={!p?.link}
+                        onClick={(e) => {
+                            if (!p?.link) e.preventDefault();
+                        }}
+                        className={!p?.link ? "pointer-events-none opacity-50" : ""}
+                    >
+                        <ArrowUpRight className="h-5 w-5 text-zinc-500 group-hover:text-teal-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" />
+                    </a>
+                  </div>
 
                 <h4 className="mt-4 font-display text-2xl text-zinc-100 group-hover:text-teal-200 transition-colors duration-300">
                   {p.title}

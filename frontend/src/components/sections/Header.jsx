@@ -67,7 +67,7 @@ const Header = ({ activeId }) => {
             onClick={() => go("contact")}
             className="h-9 rounded-md bg-teal-300 text-[#0a0a0b] hover:bg-teal-200 font-medium"
           >
-            Get in touch <ArrowUpRight className="ml-1 h-4 w-4" />
+            Contact me
           </Button>
         </div>
 

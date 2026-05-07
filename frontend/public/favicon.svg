@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Mersede Rahbar developer favicon">
+  <rect width="64" height="64" rx="14" fill="#0f172a"/>
+  <path d="M18 39 9 32l9-7" fill="none" stroke="#38bdf8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m46 25 9 7-9 7" fill="none" stroke="#38bdf8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m36 18-8 28" fill="none" stroke="#f8fafc" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="32" cy="32" r="29" fill="none" stroke="#14b8a6" stroke-width="3" opacity=".45"/>
+</svg>

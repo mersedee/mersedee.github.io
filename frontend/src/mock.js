@@ -1,17 +1,17 @@
 // Mock data for the portfolio. Edit these fields to personalize.
 
 export const profile = {
-  name: "Your Name",
-  handle: "yourname.dev",
+  name: "Mersede Rahbar",
+  handle: "mersedee.github.io",
   role: "Senior Front-End Developer",
   tagline: "Crafting pixel-perfect, performant web experiences for fintech & Web3.",
-  location: "Remote · GMT+3:30",
-  email: "hello@example.com",
+  location: "Remote · Armenia · GMT+4",
+  email: "mersede.rahbar@gmail.com",
   resumeUrl: "#",
   socials: [
-    { label: "GitHub", href: "https://github.com", handle: "github.com/yourname" },
-    { label: "LinkedIn", href: "https://linkedin.com", handle: "linkedin.com/in/yourname" },
-    { label: "X / Twitter", href: "https://x.com", handle: "@yourname" }
+    { label: "GitHub", href: "https://github.com/mersedee", handle: "github.com/mersedee" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/mersederahbar/", handle: "linkedin.com/in/mersederahbar" },
+    { label: "X / Twitter", href: "https://x.com/MersedeRahbar", handle: "@MersedeRahbar" }
   ],
   yearsExperience: 7,
   available: true
@@ -95,7 +95,7 @@ export const skills = [
   },
   {
     group: "Tooling & Workflow",
-    items: ["Git", "GitLab", "Agile", "Kanban", "Teamwork"]
+    items: ["Git", "Vibe coding workflows", "Codex", "Agile"]
   }
 ];
 
@@ -106,7 +106,8 @@ export const projects = [
     summary:
       "A multi-product DEX with eight integrated sub-apps for swapping, trading, governance, and collectibles.",
     tags: ["Next.js", "wagmi", "DeFi", "TypeScript"],
-    bullets: ["OBM · AMM · Bridge", "DAO · Auction · Lottery", "NFT · Reward"]
+    bullets: ["OBM · AMM · Bridge", "DAO · Auction · Lottery", "NFT · Reward"],
+    link: 'https://lumenswap.io/'
   },
   {
     title: "Cross-Platform Crypto Wallet",
@@ -114,7 +115,8 @@ export const projects = [
     summary:
       "Self-custody wallet shipped as browser extension, desktop app, and Progressive Web App from a shared Next.js codebase.",
     tags: ["Next.js", "Extension", "PWA", "Desktop"],
-    bullets: ["Shared component system", "ConnectKit auth", "Encrypted storage"]
+    bullets: ["Shared component system", "ConnectKit auth", "Encrypted storage"],
+    link: 'https://rabet.io/'
   },
   {
     title: "Ledger Explorer",
@@ -122,7 +124,7 @@ export const projects = [
     summary:
       "React-based explorer for searching and inspecting ledgers, transactions, and on-chain data.",
     tags: ["React", "Indexing", "Search"],
-    bullets: ["Fast search", "Tx inspection", "Responsive UI"]
+    bullets: ["Fast search", "Tx inspection", "Responsive UI"],
   },
   {
     title: "Web3 Gaming Platform",

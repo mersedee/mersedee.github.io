@@ -54,9 +54,9 @@ const Hero = () => {
         </h1>
 
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-zinc-500 mt-3 leading-[1.05]">
-          <span className="word-mask" style={step(3)}>I build for the </span>
-          <span className="word-mask text-zinc-200" style={step(4)}>decentralized </span>
-          <span className="word-mask" style={step(5)}>web</span>
+          <span className="word-mask mr-[0.25em]" style={step(3)}>I build</span>
+          <span className="word-mask mr-[0.25em] text-zinc-200" style={step(4)}>modern products</span>
+          <span className="word-mask" style={step(5)}>for the web</span>
           <span className="cursor-blink" />
         </h2>
 
@@ -65,11 +65,8 @@ const Hero = () => {
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-3 hero-rise" style={step(7)}>
-          <Button
-            onClick={() => scrollTo("projects")}
-            className="h-11 px-5 rounded-md bg-teal-300 text-[#0a0a0b] hover:bg-teal-200 font-medium"
-          >
-            View selected work <ArrowUpRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          <Button className="h-11 px-5 rounded-md bg-teal-300 text-[#0a0a0b] hover:bg-teal-200 font-medium">
+            Download resume
           </Button>
           <Button
             onClick={() => scrollTo("contact")}
@@ -80,7 +77,7 @@ const Hero = () => {
           </Button>
         </div>
 
-        <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-6 max-w-3xl border-t border-white/5 pt-8">
+        <div className="mt-14 grid grid-cols-2 sm:grid-cols-[0.85fr_1fr_1fr_1.35fr] gap-x-6 gap-y-6 max-w-5xl border-t border-white/5 pt-8">
           <Stat label="Experience" value={`${profile.yearsExperience}+ yrs`} delay={8} step={step} />
           <Stat label="Focus" value="React · Next.js" delay={9} step={step} />
           <Stat label="Domain" value="Fintech · Web3" delay={10} step={step} />
@@ -102,7 +99,7 @@ const Hero = () => {
 const Stat = ({ label, value, icon, delay, step }) => (
   <div className="hero-rise" style={step(delay)}>
     <div className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 mb-1">{label}</div>
-    <div className="text-zinc-200 text-sm md:text-base flex items-center gap-1.5">
+    <div className="text-zinc-200 text-sm md:text-base flex items-center gap-1.5 whitespace-nowrap">
       {icon}
       <span>{value}</span>
     </div>
