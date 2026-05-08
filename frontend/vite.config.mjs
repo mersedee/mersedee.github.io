@@ -338,6 +338,7 @@ export default defineConfig(({ command, mode }) => {
       visualEditsDevPlugin(enableVisualEdits),
     ].filter(Boolean),
     base: '/',
+    assetsInclude: ['**/*.pdf'],
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "src"),

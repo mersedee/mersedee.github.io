@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
-import { ArrowDown, ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowDown, MapPin } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { downloadPdf } from "@/lib/downloadPdf";
 import { profile } from "@/mock";
 
 const Hero = () => {
@@ -23,6 +24,10 @@ const Hero = () => {
   const scrollTo = (id) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleDownload = async () => {
+    await downloadPdf(profile.resumeUrl, profile.resumeFileName);
   };
 
   // Each word/line gets a staggered entrance
@@ -65,7 +70,10 @@ const Hero = () => {
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-3 hero-rise" style={step(7)}>
-          <Button className="h-11 px-5 rounded-md bg-teal-300 text-[#0a0a0b] hover:bg-teal-200 font-medium">
+          <Button
+            onClick={handleDownload}
+            className="h-11 px-5 rounded-md bg-teal-300 text-[#0a0a0b] hover:bg-teal-200 font-medium"
+          >
             Download resume
           </Button>
           <Button

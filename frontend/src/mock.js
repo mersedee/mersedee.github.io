@@ -1,5 +1,8 @@
 // Mock data for the portfolio. Edit these fields to personalize.
 
+export const resumeFileName = "MersedeRahbarFrontendDeveloper.pdf";
+export const resumeUrl = `${import.meta.env.BASE_URL}${resumeFileName}`;
+
 export const profile = {
   name: "Mersede Rahbar",
   handle: "mersedee.github.io",
@@ -7,7 +10,8 @@ export const profile = {
   tagline: "Crafting pixel-perfect, performant web experiences for fintech & Web3.",
   location: "Remote · Armenia · GMT+4",
   email: "mersede.rahbar@gmail.com",
-  resumeUrl: "#",
+  resumeFileName,
+  resumeUrl,
   socials: [
     { label: "GitHub", href: "https://github.com/mersedee", handle: "github.com/mersedee" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/mersederahbar/", handle: "linkedin.com/in/mersederahbar" },

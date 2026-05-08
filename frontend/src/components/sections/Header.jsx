@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { downloadPdf } from "@/lib/downloadPdf";
 import { navItems, profile } from "@/mock";
 
 const Header = ({ activeId }) => {
@@ -19,6 +20,10 @@ const Header = ({ activeId }) => {
     setOpen(false);
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const handleDownload = async () => {
+    await downloadPdf(profile.resumeUrl, profile.resumeFileName);
   };
 
   return (
@@ -57,12 +62,13 @@ const Header = ({ activeId }) => {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
-          <a
-            href={profile.resumeUrl}
+          <button
+            type="button"
+            onClick={handleDownload}
             className="text-xs font-mono text-zinc-400 hover:text-teal-300 link-underline"
           >
             résumé.pdf
-          </a>
+          </button>
           <Button
             onClick={() => go("contact")}
             className="h-9 rounded-md bg-teal-300 text-[#0a0a0b] hover:bg-teal-200 font-medium"
